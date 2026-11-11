@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: echo "scratch repo: nothing to test yet"
+      - run: echo "scratch repo, nothing to test yet"
