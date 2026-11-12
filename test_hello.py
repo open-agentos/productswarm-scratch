@@ -13,6 +13,13 @@ class HelloTest(unittest.TestCase):
         self.assertEqual(line, "Hello, world")
         self.assertEqual(out.getvalue(), "Hello, world\n")
 
+    def test_name_flag(self):
+        out = io.StringIO()
+        with contextlib.redirect_stdout(out):
+            line = hello.main(["--name", "Ada"])
+        self.assertEqual(line, "Hello, Ada")
+        self.assertEqual(out.getvalue(), "Hello, Ada\n")
+
     def test_shout_prints_capitals(self):
         out = io.StringIO()
         with contextlib.redirect_stdout(out):

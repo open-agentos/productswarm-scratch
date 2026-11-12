@@ -1,3 +1,3 @@
 # productswarm-scratch
 
-Usage: `python3 hello.py [--shout]`
+Usage: `python3 hello.py [--name NAME] [--shout]`
