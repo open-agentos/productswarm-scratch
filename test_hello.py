@@ -41,6 +41,13 @@ class HelloTest(unittest.TestCase):
         self.assertEqual(line, "HELLO, WORLD")
         self.assertEqual(out.getvalue(), "\x1b[31mHELLO, WORLD\x1b[0m\n")
 
+    def test_times_flag(self):
+        out = io.StringIO()
+        with contextlib.redirect_stdout(out):
+            line = hello.main(["--times", "3"])
+        self.assertEqual(line, "Hello, world")
+        self.assertEqual(out.getvalue(), "Hello, world Hello, world Hello, world\n")
+
 
 class _Terminal(io.StringIO):
     def isatty(self):
