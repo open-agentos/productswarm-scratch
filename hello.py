@@ -5,7 +5,7 @@ import sys
 
 from colorama import Fore, Style, just_fix_windows_console
 
-__version__ = "0.1"
+__version__ = "0.1.0"
 
 
 def main(argv=None):

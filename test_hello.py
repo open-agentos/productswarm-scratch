@@ -47,7 +47,7 @@ class HelloTest(unittest.TestCase):
             with self.assertRaises(SystemExit) as exit_:
                 hello.main(["--version"])
         self.assertEqual(exit_.exception.code, 0)
-        self.assertEqual(out.getvalue(), f"hello {hello.__version__}\n")
+        self.assertEqual(out.getvalue(), "hello 0.1.0\n")
         self.assertNotIn("Hello", out.getvalue())
 
 
