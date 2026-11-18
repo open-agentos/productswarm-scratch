@@ -5,11 +5,14 @@ import sys
 
 from colorama import Fore, Style, just_fix_windows_console
 
+__version__ = "0.1"
+
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description="Print a greeting.")
     parser.add_argument("--name", default="world", help="who to greet (default: world)")
     parser.add_argument("--shout", action="store_true", help="print the greeting in red capitals")
+    parser.add_argument("--version", action="version", version=f"hello {__version__}")
     args = parser.parse_args(argv)
     line = f"Hello, {args.name}"
     if args.shout:

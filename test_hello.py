@@ -41,6 +41,15 @@ class HelloTest(unittest.TestCase):
         self.assertEqual(line, "HELLO, WORLD")
         self.assertEqual(out.getvalue(), "\x1b[31mHELLO, WORLD\x1b[0m\n")
 
+    def test_version_flag(self):
+        out = io.StringIO()
+        with contextlib.redirect_stdout(out):
+            with self.assertRaises(SystemExit) as exit_:
+                hello.main(["--version"])
+        self.assertEqual(exit_.exception.code, 0)
+        self.assertEqual(out.getvalue(), f"hello {hello.__version__}\n")
+        self.assertNotIn("Hello", out.getvalue())
+
 
 class _Terminal(io.StringIO):
     def isatty(self):
