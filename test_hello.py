@@ -46,7 +46,7 @@ class HelloTest(unittest.TestCase):
         with contextlib.redirect_stdout(out):
             line = hello.main(["--times", "3"])
         self.assertEqual(line, "Hello, world")
-        self.assertEqual(out.getvalue(), "Hello, world Hello, world Hello, world\n")
+        self.assertEqual(out.getvalue(), "Hello, world\nHello, world\nHello, world\n")
 
 
 class _Terminal(io.StringIO):

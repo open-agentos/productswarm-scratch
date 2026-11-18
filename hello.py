@@ -19,7 +19,7 @@ def main(argv=None):
     if args.shout and sys.stdout.isatty():
         just_fix_windows_console()
         out = f"{Fore.RED}{line}{Style.RESET_ALL}"
-    print(" ".join([out] * args.times))
+    print("\n".join([out] * args.times))
     return line
 
 
